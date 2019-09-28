@@ -5,6 +5,7 @@ I am using this TeX/LaTeX template to create my lecture presentations.
 - Custom Beamer theme (sty files)
 - With figures (/img)
 - With custom graphics in Tikz (/img)
+- Template color RGB (132 50 5)
 
 This template is created based on an answer at https://tex.stackexchange.com/a/147533/51010 by [marczellm](https://tex.stackexchange.com/users/21963/marczellm).
 
