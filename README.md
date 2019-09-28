@@ -1,6 +1,7 @@
 # presentation-template
 I am using this TeX/LaTeX template to create my lecture presentations.
 
+- XeLaTeX engine for system font usage
 - Custom Beamer theme (sty files)
 - With figures (/img)
 - With custom graphics in Tikz (/img)
