@@ -1,0 +1,38 @@
+\mode<presentation>
+
+\setbeamertemplate{background}{
+  \begin{tikzpicture}
+  \useasboundingbox (0,0) rectangle(\the\paperwidth,\the\paperheight);
+	\definecolor{tempcolor}{RGB}{132,50,5}
+  \fill[color=white] (0,2) rectangle (\the\paperwidth,\the\paperheight);
+	\fill[color=tempcolor] (13.6,18) rectangle(16.1,20.5);
+%  \fill[color=orange] (0,0) rectangle(2.95,1.9);
+%  \fill[color=blue!50!cyan!80] (3.05,0) rectangle(\the\paperwidth,1.9);
+  \ifnum\thepage>1\relax%
+   \fill[white,opacity=1] (0,0) rectangle(\the\paperwidth,\the\paperheight);
+   \fi
+  \end{tikzpicture}
+}
+
+% Title page
+\defbeamertemplate*{title page}{texsx}[1][]
+{ 
+   \vbox{}
+   \vfill
+   \vskip4cm%
+    \begin{beamercolorbox}[wd=\the\paperwidth,center,sep=0pt,#1]{title page header}
+      \usebeamerfont{title}\inserttitle\par%
+    \end{beamercolorbox}%
+    \vskip0.75cm%
+    \begin{beamercolorbox}[wd=\the\paperwidth,center,#1]{author}
+      \usebeamerfont{author}\insertauthor%
+    \end{beamercolorbox}
+     \vskip0.2cm%
+    \begin{beamercolorbox}[wd=\the\paperwidth,center,#1]{date}
+      \usebeamerfont{author}\insertdate%
+    \end{beamercolorbox}
+   \vfill
+}
+
+\mode
+<all>

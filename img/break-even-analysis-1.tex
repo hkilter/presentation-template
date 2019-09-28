@@ -1,0 +1,113 @@
+\documentclass[tikz,border=5mm]{standalone}
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\usepgfplotslibrary{fillbetween}
+\usetikzlibrary{%
+  calc,
+  angles,
+  positioning,
+  intersections,
+  quotes,
+  decorations.markings,
+  backgrounds,
+  patterns
+  }%
+
+\begin{document}
+
+\begin{tikzpicture} [scale=1.0]
+  \begin{axis}[%
+    title=Break-Even Analysis - Sample Graph,
+    width = 20cm, 
+    height = 20cm,
+    axis lines=left,
+    axis equal image,
+    axis on top = true, 
+    axis x line = middle, 
+    axis y line = middle,
+    legend cell align=left,
+    legend style={draw=none},
+    xmin = 0, xmax = 31, 
+    ymin = 0, ymax = 21,
+    xticklabels={,,},
+    yticklabels={,,},
+%    /pgfplots/xtick = {0,10,...,40},
+%    /pgfplots/ytick = {0,10,...,40},
+%    tick align = outside,
+    xlabel = {Production Volume (unit)},
+    x label style={
+      at={(axis description cs:0.89,-0.05)},
+      anchor=north,
+    },
+    ylabel = {Revenue and Cost (\$)},
+    ylabel style = {
+      at={(axis description cs:-0.025,0.87)},
+      rotate=90,   
+      anchor=south,
+    },
+    xtick={12},
+    xticklabels={$n$},
+    ytick={7.9},
+    yticklabels={$a$},
+    ]%
+    % INCOME LINE
+    \addplot[%
+    green!100,
+    line width = 1,
+    name path=Income
+    ]%
+    coordinates {(0,0)(26,17)}
+    node [right,rotate=0,black] {Income};
+    % TOTAL COST LINE
+    \addplot[%
+    red!100,
+    line width = 1,
+    name path=TotalCost
+    ]%
+    coordinates {(0,6)(26,10)}
+    node [right,rotate=0,black] {Total Cost};
+    % FIXED COST LINE
+    \addplot[%
+    red!50,
+    dashed,
+    line width = 1,
+    name path=FixedCost
+    ]%
+    coordinates {(0,6)(26,6)}
+    node [right,rotate=0,black] {Fixed Cost};
+    % VARIABLE COST LINE
+    \addplot[%
+    red!50,
+    dashed,
+    line width = 1,
+    name path=VariableCost
+    ]%
+    coordinates {(0,0)(26,4)}
+    node [right,rotate=0,black] {Variable Cost};
+
+    % POINTS
+    \addplot[%
+    black!50,
+    dotted,
+    line width = 1,
+    name path=BreakEvenAxisY
+    ]%
+    coordinates {(12,8)(12,0)};
+
+    \addplot[%
+    black!50,
+    dotted,
+    line width = 1,
+    name path=BreakEvenAxisX
+    ]%
+    coordinates {(12,7.9)(0,7.9)};
+
+    % INTERSECTION OF TWO LINES
+    \path [name intersections={of=Income and TotalCost,by=E}];
+    \node [fill=black,circle,label=Break-Even Point] at (E) {};
+  \end{axis}
+
+\end{tikzpicture}
+
+\end{document}
