@@ -1,4 +1,4 @@
-# presentation-template
+# presentation-template (texsx)
 I am using this TeX/LaTeX template to create my lecture presentations.
 
 - XeLaTeX engine for system font usage
