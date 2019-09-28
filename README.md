@@ -10,3 +10,5 @@ This template is created based on an answer at https://tex.stackexchange.com/a/1
 
 **IMPORTANT**  
 It contains full of garbage, you need to clear almost all content to get a meaningful structure.
+
+![Sample screenshot](/img/Sample.png)
